@@ -1,0 +1,30 @@
+#SET OF LINUX BASIC COMMANDS
+
+pwd           - show current directory
+ls -l         - list files (long)
+ls -a         - list including hidden
+cd <path>     - change directory
+cd ..         - parent directory
+mkdir name    - create directory
+mkdir -p path - create parent dirs as needed
+rm file       - remove file
+rm -r dir     - remove directory recursively (be careful)
+cp src dst    - copy file
+cp -r src dst - copy dir
+mv src dst    - move/rename
+touch file    - create empty file
+cat file      - display file content
+less file     - scrollable viewer
+head file     - first 10 lines
+tail file     - last 10 lines
+tail -f file  - follow a changing log (useful for alert log)
+chmod +x file - make executable
+chown user:group file - change owner
+df -h         - disk usage
+du -sh dir    - size of directory
+ps -ef        - list processes
+ps -ef | grep pmon - find Oracle instance processes
+grep text file - search text in file
+ssh-keygen -t ed25519 -C "email" - generate SSH key
+git commands: git init, git add ., git commit -m "msg", git push
+
