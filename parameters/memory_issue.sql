@@ -7,3 +7,4 @@ ALTER SYSTEM SET SGA_TARGET=50M SCOPE=SPFILE;
 
 --shutdown the database and try restarting it
 
+SHUTDOWN IMMEDIATE

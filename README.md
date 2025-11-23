@@ -14,3 +14,8 @@ git clone https://github.com/LUCAXU/ORACLE-DBA-SCRIPTS.git /u01/app/oracle/scrip
     /sql        - SQL practice scripts
     /linux      - Linux commands and scripts
     /u
+
+## how to run the scripts:
+## log in as sysdba in the sqlplus utility: sqlplus / as sysdba
+## @/u01/app/oracle/scripts/parameters/showparam.sql 
+## oracle_home/scripts/subdir/script.sql

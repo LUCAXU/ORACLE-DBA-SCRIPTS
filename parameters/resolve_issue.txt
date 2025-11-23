@@ -7,14 +7,16 @@ in this case:
 we create a pfile from the spfile, edit it and specify it at the startup command:
 
 
+
 CREATE PFILE='/home/oracle/PFILEtemp.ora' from SPFILE; 
 
 host vi /home/oracle/PFILEtemp.ora 
 
-Open the PFILEtemp.ora file with the vi editor. Fix the value of the SGA_TARGET in it to
-2516582400 ( equivalent to 2400*1024*1024 = 2400M).
+
+Open the PFILEtemp.ora file with the vi editor. Fix the value of the SGA_TARGET in it to 2516582400 ( equivalent to 2400*1024*1024 = 2400M).
 
 
 Startup the database with the PFILE. 
-startup PFILE=/home/oracle/PFILEtemp.ora 
+
+STARTUP  PFILE=/home/oracle/PFILEtemp.ora 
 

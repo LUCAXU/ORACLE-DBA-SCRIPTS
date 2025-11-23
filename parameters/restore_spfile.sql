@@ -9,6 +9,6 @@ CREATE SPFILE FROM PFILE='/home/oracle/PFILEtemp.ora';
 --issue SHUTDOWN IMMEDIATE then STARTUP
 
 -- as a clean up delete the pfile:
---host rm /home/oracle/PFILEtemp.ora 
+host rm /home/oracle/PFILEtemp.ora 
 
 
