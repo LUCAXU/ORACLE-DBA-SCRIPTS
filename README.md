@@ -1,6 +1,7 @@
 # Oracle DBA Training Scripts
 
 This repository contains my Oracle DBA practice scripts, Linux command notes, and utility files used during my training.
+the environment is a multitenant one
 
 ## Restore Instructions (when VM resets)
 

@@ -1,0 +1,17 @@
+Display the structure of *_TABLES views
+Observe that the first column in the DBA* and ALL* views is the OWNER column. This column is
+missing in the USER_TABLES view.
+desc DBA_TABLES
+desc ALL_TABLES
+desc USER_TABLES 
+
+
+in cdb env
+
+desc CDB_TABLES
+
+
+most of the v$views are named singular
+while data dicitionary views comes with different prefix and plurarl naming
+
+
