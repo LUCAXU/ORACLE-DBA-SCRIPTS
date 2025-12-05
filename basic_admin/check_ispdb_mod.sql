@@ -9,9 +9,10 @@ SELECT VALUE, VALUE/1024/1024/1024 GB, ISPDB_MODIFIABLE
 FROM V$SYSTEM_PARAMETER
 WHERE NAME='db_recovery_file_dest_size'; 
 
+
 SHOW PARAMETER DB_RECOVERY_FILE_DEST_SIZE;
 
-/* move the current containe from the root to a pdb
+/* move the current container from the root to a pdb
 You should receive the following error:
 ORA-65040: operation not allowed from within a pluggable database */
 
@@ -20,6 +21,7 @@ ALTER SESSION SET CONTAINER=PDB1;
 SHOW CON_ID;
 
 SELECT VALUE FROM V$SYSTEM_PARAMETER WHERE NAME='db_recovery_file_dest_size';
+
 ALTER SYSTEM SET DB_RECOVERY_FILE_DEST_SIZE = 10903094248;
 
 
@@ -30,11 +32,13 @@ ALTER SESSION SET CONTAINER=CDB$ROOT;
 SHOW CON_ID;
 
 ALTER SYSTEM SET DB_RECOVERY_FILE_DEST_SIZE = 10903094248 SCOPE=BOTH;
+
 SHOW PARAMETER DB_RECOVERY_FILE_DEST_SIZE;
 
 
 --Change the current container to PDB1 and query the value of the parameter.
 --The change made at the CDB level is seen by the PDB.
+
 ALTER SESSION SET CONTAINER=PDB1;
 SHOW_CON_ID;
 
@@ -43,3 +47,8 @@ NAME='db_recovery_file_dest_size';
 
 
 ALTER SESSION SET CONTAINER=CDB$ROOT; 
+
+
+
+
+
