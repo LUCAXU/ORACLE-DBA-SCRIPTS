@@ -1,0 +1,12 @@
+#connect to rman
+
+rman target /
+
+#perform a hot/online whole database backup
+#the database must run in archive log mode
+
+BACKUP AS BACKUPSET DATABASE PLUS ARCHIVELOG;
+
+
+
+

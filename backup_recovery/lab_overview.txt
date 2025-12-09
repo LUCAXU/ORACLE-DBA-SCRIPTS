@@ -1,0 +1,36 @@
+RMAN
+
+Lab Overview
+
+You will perform:
+
+Create a table + insert data
+
+Take an online (hot) RMAN backup
+
+Generate redo (more inserts)
+
+Simulate a database crash
+
+Delete datafiles
+
+OR kill instance
+
+Use RMAN to restore:
+
+the controlfile (if needed)
+
+the datafiles
+
+Perform media recovery using archived logs
+
+Open database with RESETLOGS
+
+Verify that no data was lost
+
+Prerequisites
+
+✔ Database running in ARCHIVELOG mode
+✔ FRA configured
+✔ RMAN full backup available
+✔ You must run as oracle user

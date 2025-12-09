@@ -1,0 +1,69 @@
+##try starting up the database
+##the command shuld fail
+
+#SQL> startup
+#ORACLE instance started.
+
+#Total System Global Area 2516581464 bytes
+#Fixed Size                  8899672 bytes
+#Variable Size             553648128 bytes
+#Database Buffers         1946157056 bytes
+#Redo Buffers                7876608 bytes
+#Database mounted.
+#ORA-01157: cannot identify/lock data file 5 - see DBWR trace file
+#ORA-01110: data file 5: '/u01/app/oracle/oradata/ORADB/tbs_test01.dbf'
+
+
+##connect to rman
+
+rman target /
+
+##perform a restore operation
+
+RESTORE DATABASE;
+
+
+Starting restore at 09-DEC-2025 21:51:53
+using target database control file instead of recovery catalog
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=409 device type=DISK
+
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00001 to /u01/app/oracle/oradata/ORADB/datafile/o1_mf_system_ng9pstxz_.dbf
+channel ORA_DISK_1: restoring datafile 00002 to /u01/app/oracle/oradata/ORADB/datafile/o1_mf_sysaux_ng9pt0mp_.dbf
+channel ORA_DISK_1: restoring datafile 00003 to /u01/app/oracle/oradata/ORADB/datafile/o1_mf_undotbs1_ng9pt41b_.dbf
+channel ORA_DISK_1: restoring datafile 00004 to /u01/app/oracle/oradata/ORADB/datafile/o1_mf_users_ng9ptp55_.dbf
+channel ORA_DISK_1: restoring datafile 00005 to /u01/app/oracle/oradata/ORADB/tbs_test01.dbf
+channel ORA_DISK_1: reading from backup piece /u01/app/oracle/fast_recovery_area/ORADB/backupset/2025_12_09/o1_mf_nnndf_TAG20251209T214416_nmjqzjs8_.bkp
+
+channel ORA_DISK_1: piece handle=/u01/app/oracle/fast_recovery_area/ORADB/backupset/2025_12_09/o1_mf_nnndf_TAG20251209T214416_nmjqzjs8_.bkp tag=TAG20251209T214416
+channel ORA_DISK_1: restored backup piece 1
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:25
+Finished restore at 09-DEC-2025 21:52:19
+
+
+
+
+#after the command succeed run
+
+RECOVER DATABASE;
+
+
+Starting recover at 09-DEC-2025 21:52:29
+using channel ORA_DISK_1
+
+starting media recovery
+
+archived log for thread 1 with sequence 22 is already on disk as file /u01/app/oracle/fast_recovery_area/ORADB/archivelog/2025_12_09/o1_mf_1_22_nmjqzqnv_.arc
+archived log for thread 1 with sequence 23 is already on disk as file /u01/app/oracle/fast_recovery_area/ORADB/archivelog/2025_12_09/o1_mf_1_23_nmjr4gxm_.arc
+archived log for thread 1 with sequence 24 is already on disk as file /u01/app/oracle/fast_recovery_area/ORADB/archivelog/2025_12_09/o1_mf_1_24_nmjr4lfp_.arc
+archived log file name=/u01/app/oracle/fast_recovery_area/ORADB/archivelog/2025_12_09/o1_mf_1_22_nmjqzqnv_.arc thread=1 sequence=22
+media recovery complete, elapsed time: 00:00:01
+Finished recover at 09-DEC-2025 21:52:30
+
+
+
+## in rman run
+
+ALTER DATABASE OPEN;
