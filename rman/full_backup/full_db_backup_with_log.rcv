@@ -1,0 +1,7 @@
+##whole database backup + archive logs 
+#hot backup location is FRA by default
+RUN {
+    ALLOCATE CHANNEL c1 DEVICE TYPE DISK;
+    BACKUP DATABASE PLUS ARCHIVELOG;
+    RELEASE CHANNEL c1;
+}

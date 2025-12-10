@@ -1,0 +1,8 @@
+
+#full database backup hot/cold
+
+RUN {
+    ALLOCATE CHANNEL c1 DEVICE TYPE DISK;
+    BACKUP DATABASE;
+    RELEASE CHANNEL c1;
+}

@@ -1,0 +1,33 @@
+#This is the common and recommended configuration. Your archived logs are generated #into the FRA (Location A), but you have RMAN configured to back up to a different #device, such as: 
+#A separate non-FRA disk mount point (Location B).
+#A tape library via an SBT (System Backup to Tape) channel.
+#In this case, the command works exactly as intended:
+#RMAN reads the archive logs from the Source (Location A/FRA).
+#It writes the backup pieces to the Destination (Location B/Tape).
+#Upon successful completion of each backup piece, the original source file is deleted #from Location A/FRA.
+
+
+
+#Space Management: The primary purpose is to free up disk space in the archive log #destination areas immediately after the logs are safely backed up to another location #(often tape or a different disk system).
+#Single Copy Deletion: If you have multiple copies of the same archived log sequence #number (due to archiving to multiple destinations), DELETE INPUT only removes the #specific physical file that was used as the source for the backup. The other copies in #different destinations remain untouched.
+#Contrast with DELETE ALL INPUT: If you had specified DELETE ALL INPUT, RMAN would #delete every copy of that log sequence number across all archiving destinations after #backing up just one copy of the log. 
+#In short, this command is a standard housekeeping task to move archived logs from the #online disk storage to a backup medium and reclaim disk space.
+#This is the common and recommended configuration. Your archived logs are generated #into the FRA (Location A), but you have RMAN configured to back up to a different #device, such as: 
+#A separate non-FRA disk mount point (Location B).
+#A tape library via an SBT (System Backup to Tape) channel.
+#In this case, the command works exactly as intended:
+#RMAN reads the archive logs from the Source (Location A/FRA).
+#It writes the backup pieces to the Destination (Location B/Tape).
+#Upon successful completion of each backup piece, the original source file is deleted #from Location A/FRA.
+
+
+
+#Space Management: The primary purpose is to free up disk space in the archive log #destination areas immediately after the logs are safely backed up to another location #(often tape or a different disk system).
+#Single Copy Deletion: If you have multiple copies of the same archived log sequence #number (due to archiving to multiple destinations), DELETE INPUT only removes the #specific physical file that was used as the source for the backup. The other copies in #different destinations remain untouched.
+#Contrast with DELETE ALL INPUT: If you had specified DELETE ALL INPUT, RMAN would #delete every copy of that log sequence number across all archiving destinations after #backing up just one copy of the log. 
+#In short, this command is a standard housekeeping task to move archived logs from the #online disk storage to a backup medium and reclaim disk space.
+
+
+RUN {
+    BACKUP ARCHIVELOG ALL DELETE INPUT;
+}

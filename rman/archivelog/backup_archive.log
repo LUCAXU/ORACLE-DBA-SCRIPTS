@@ -1,0 +1,8 @@
+#backing up archive log destination is fra by default 
+#location can be specified using FORMAT\:
+
+RUN {
+    ALLOCATE CHANNEL c1 DEVICE TYPE DISK;
+    BACKUP ARCHIVELOG ALL;
+    RELEASE CHANNEL c1;
+}
