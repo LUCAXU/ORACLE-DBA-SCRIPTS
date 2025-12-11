@@ -1,0 +1,9 @@
+
+
+#set controlfile autobackup to on and display it
+
+CONFIGURE CONTROLFILE AUTOBACKUP ON;
+
+SHOW CONTROLFILE AUTOBACKUP;
+
+

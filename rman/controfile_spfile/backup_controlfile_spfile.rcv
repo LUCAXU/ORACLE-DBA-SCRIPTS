@@ -1,0 +1,8 @@
+
+
+
+RUN {
+    BACKUP CURRENT CONTROLFILE;
+    BACKUP SPFILE;
+}
+

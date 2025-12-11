@@ -1,0 +1,16 @@
+
+
+
+#The RMAN command VALIDATE DATABASE; is used to perform a comprehensive integrity check #on all the data files, the current control file, and the server parameter file (if #used by the instance) of your Oracle database.
+#What the Command Does
+#When you run VALIDATE DATABASE;, RMAN performs the following actions:
+#Reads all blocks: RMAN reads every block of the specified files entirely, similar to #how it would during a backup operation. It does not, however, generate any backup sets #or image copies.
+#Checks for physical corruption: By default, the command checks for physical #corruptions within the blocks (intrablock corruption), such as issues that prevent the #database from recognizing the block structure.
+#Identifies missing files: It verifies that all database files exist in their correctlocations and are accessible.
+#Records corruptions: If RMAN discovers any corrupt blocks, it logs them in the V$DATABASE_BLOCK_CORRUPTION view and in the Automatic Diagnostic Repository (ADR).
+#Reports status: The RMAN output will provide a detailed list of files and their validation status, including the number of blocks examined, marked corrupt, and the SCN (System Change Number).
+
+
+
+VALIDATE DATABASE;
+
