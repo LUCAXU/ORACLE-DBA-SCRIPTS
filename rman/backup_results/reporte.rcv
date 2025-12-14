@@ -1,0 +1,6 @@
+
+#What RMAN could delete
+#Based on your retention policy
+
+REPORT OBSOLETE;
+

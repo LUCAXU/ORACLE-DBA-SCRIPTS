@@ -1,0 +1,13 @@
+
+#CHECK if any database datafiles is missing
+VALIDATE DATABASE;
+
+#validate option in restore command, scansthe backup files to check for their integrity without performing the actual restore
+
+
+
+RESTORE DATABASE PREVIEW;
+RESTORE DATABASE PREVIEW SUMMARY;
+
+RESTORE DATABASE VALIDATE;
+

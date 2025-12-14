@@ -1,0 +1,31 @@
+
+SHOW PARAMETER db_recovery_file_dest;
+
+
+HOST 'ls -lh /u01/app/oracle/fast_recovery_area/ORADB/archivelog/*/*';
+
+
+LIST ARCHIVELOG ALL;
+
+#Thread
+
+#Sequence number
+
+#Low SCN / Next SCN
+
+#Name and location
+
+#This is what RMAN thinks exists.
+
+
+
+SELECT
+  SEQUENCE#,
+  THREAD#,
+  FIRST_TIME,
+  NEXT_TIME,
+  ARCHIVED,
+  STATUS
+FROM V$ARCHIVED_LOG
+ORDER BY SEQUENCE#;
+
