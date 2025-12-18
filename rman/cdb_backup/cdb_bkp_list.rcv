@@ -1,0 +1,18 @@
+# listing backup sets of the full database backup done at the cdb level 
+
+list backupset of database;
+
+list backupset;
+
+# FILTERING backupset output
+# because we took a fullbackup all the container backups are available
+
+ list backupset of pluggable database "CDB$ROOT";
+  list backupset of pluggable database pdb1;
+
+
+
+# sql command
+
+select RECID,backup_type,controlfile_included,pieces,block_size/1024/1024 from v$backup_set;
+

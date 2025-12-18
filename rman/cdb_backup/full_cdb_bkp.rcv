@@ -1,0 +1,5 @@
+# full rman backup at the cdb root = whole database
+
+
+backup database tag'full_bkp' plus archivelog tag 'full_arc';
+
