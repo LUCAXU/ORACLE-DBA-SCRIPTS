@@ -1,0 +1,3 @@
+RESYNC CATALOG;
+
+##is needed when we took a backup or modified the physical structure of the data#base without connecting to the recovery target but to the target only

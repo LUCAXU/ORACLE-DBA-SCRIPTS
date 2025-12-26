@@ -1,0 +1,7 @@
+connect target / catalog rcowner@pdb12
+
+#make sure that a service name is configured in tnsnames.ora that points to the
+#oradb2 pdb1 service name not the oradb2 pdb1
+##oradb2 is registered in the listener to accept connection via the network
+
+REGISTER DATABASE;

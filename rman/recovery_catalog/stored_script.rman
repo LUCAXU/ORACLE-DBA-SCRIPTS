@@ -1,0 +1,11 @@
+
+CREATE GLOBAL SCRIPT global_full_backup
+COMMENT 'Full backup with archivelogs'
+{
+  BACKUP DATABASE PLUS ARCHIVELOG;
+  DELETE OBSOLETE;
+}
+
+
+
+PRINT SCRIPT global_full_backup;

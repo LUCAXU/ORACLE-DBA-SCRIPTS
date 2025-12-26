@@ -1,0 +1,9 @@
+PDB12 =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = srv1.localdomain)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVICE_NAME = pdb1.localdomain)
+      (INSTANCE_NAME = oradb2)   # This forces the connection to oradb
+    )
+  )
+
