@@ -1,0 +1,30 @@
+#before connecting to rman
+
+#create a table in your pdb insert some data commit
+SELECT CURRENT_SCN, SCN_TO_TIMESTAMP(CURRENT_SCN)
+FROM V$DATABASE;
+#get the scn and drop the table
+
+#get the current scn or timestamp to use duirng the recovery
+
+#AFTER connecting to rman shutdown then mount the db
+
+RUN {
+  SET UNTIL SCN value
+  RESTORE DATABASE;
+  RECOVER DATABASE;
+}
+
+
+ALTER DATABASE OPEN RESETLOGS
+#mandatory to open the database with resetlogs because we have a mismatch
+#with incomplete recovery of the database and online redo log SCRUN {
+  SET UNTIL SCN value
+  RESTORE DATABASE;
+  RECOVER DATABASE;
+}
+
+
+ALTER DATABASE OPEN RESETLOGS
+#mandatory to open the database with resetlogs because we have a mismatch
+#with incomplete recovery of the database and online redo log SCNN

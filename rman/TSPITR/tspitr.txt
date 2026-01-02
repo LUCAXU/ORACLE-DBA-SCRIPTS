@@ -1,0 +1,45 @@
+When TSPITR is used
+
+Logical corruption limited to:
+
+One or more tablespaces
+
+You do not want to impact the whole database
+
+Requires:
+
+ARCHIVELOG mode
+
+SYSTEM, SYSAUX, UNDO cannot be recovered with TSPITR
+
+Key architectural concept (do not skip)
+
+TSPITR uses an auxiliary database internally.
+
+Oracle:
+
+Restores the tablespace to a past time
+
+Exports metadata
+
+Imports it back into the target DB
+
+That’s why you need:
+
+Auxiliary destination
+
+Extra disk space
+
+TSPITR workflow (mental model)
+
+Identify corrupted tablespace
+
+Identify recovery time/SCN
+
+RMAN creates auxiliary instance
+
+Tablespace is recovered in isolation
+
+Metadata is reattached to target DB
+
+Target database stays OPEN.

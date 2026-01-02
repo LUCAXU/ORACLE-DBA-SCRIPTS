@@ -1,0 +1,18 @@
+#before jumping to the recovery scenario
+#create a tablespace in a pdb
+#create a table insert data commit get the current scn and drop it
+
+SELECT CURRENT_SCN, SCN_TO_TIMESTAMP(CURRENT_SCN)
+FROM V$DATABASE;
+
+#for auxiliary instance create the needed directory at the os level
+
+#connect as root then run the recovery run block
+#
+
+
+RUN {
+  RECOVER TABLESPACE PDB1: users
+  UNTIL TIME "TO_DATE('2026-01-01 10:30:00','YYYY-MM-DD HH24:MI:SS')"
+  AUXILIARY DESTINATION '/u01/app/oracle/aux';
+}
