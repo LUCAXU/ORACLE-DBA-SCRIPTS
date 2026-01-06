@@ -1,0 +1,5 @@
+#required ARCHIVE LOG enabled 
+#rman TARGET / @backup_db.rcv
+
+ backup database tag'full_db' plus archivelog tag'full_arc';
+

@@ -1,0 +1,11 @@
+
+
+#create the aux dir at the os level beforehand
+
+
+ run { RECOVER TABLESPACE pdb1:APP_TBS
+ until scn 1717680
+ auxiliary destination '/u01/app/oracle/aux';
+ }
+
+
